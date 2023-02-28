@@ -1,4 +1,10 @@
 <meta>
-  <info author="xernobyl" version="1.0.0" name="buffer-03" />
+  <info author="xernobyl" version="1.0.0" name="rocket-buffer03" />
+  
+  <!-- Scripts -->
+
+  <script src="src/utils/utils.lua" type="client" cache="false" />
+  <script src="src/core/listener.lua" type="client" cache="false" />
+  <script src="src/core/main.lua" type="client" cache="false" />
   
 </meta>
