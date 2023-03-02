@@ -1,6 +1,6 @@
 # Simple System Dealership
 
-Um sistema simples de concessionária que o jogador consegue fazer a autenticação e comprar qualquer veículo.
+Um sistema simples de concessionária que o jogador consegue fazer a autenticação, comprar qualquer veículo e aplicar impostos.
 
 ## Authenticate
 
