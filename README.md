@@ -50,4 +50,11 @@ Um sistema simples de concessionária que o jogador consegue fazer a autenticaç
 - [x] - Criar uma função de aplicar impostos.
 - [x] - Criar uma função de deletar o veículo.
 
+## Permissions
+
+- Delete account player command - uma permissão admin de deletar contas dos jogadores usando um comando: /deleteAccount (Username)
+- Give vehicle player command - Uma permissão admin de dar/givar veículos para jogadores usando um comando: /giveVehicle (Username, Nome do veículo, Cor)
+- Take vehicle player command - Uma permissão admin de retirar veículos para jogadores usando um comando: /takeVehicle (Username, Nome do veículo)
+  OBS: Não implementei essa parte (Ideia para se colocar no futuro!)
+
 > Stacks: **Lua**, **Commands**
