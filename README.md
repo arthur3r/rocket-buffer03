@@ -50,8 +50,4 @@ Um sistema simples de concessionária que o jogador consegue fazer a autenticaç
 - [x] - Criar uma função de aplicar impostos.
 - [x] - Criar uma função de deletar o veículo.
 
-> Stacks:
-
-1 - Lua
-2 - Commands
-3 - Utils
+> Stacks: **Lua**, **Commands**
