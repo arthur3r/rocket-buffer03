@@ -6,14 +6,22 @@ addCommandHandler("login_account", function (_, username, password)
   signInAccountUsers(username, password)
 end)
 
+addCommandHandler("logout_account", function ()
+  logoutAccountUsers()
+end)
+
 addCommandHandler("data_user", function (_, username) 
-  searchUsers(username)
+  searchDatasUsers(username)
 end)
 
-addCommandHandler("buy_vehicle", function (_, username, nameVehicle, color) 
-  buyVehicle(username, nameVehicle, color)
+addCommandHandler("buy_vehicle", function (_, nameVehicle, color) 
+  buyVehicle(nameVehicle, color)
 end)
 
-addCommandHandler("data_vehicle", function (_, username) 
+addCommandHandler("data_vehicles", function (_, username) 
   searchDatasVehicles(username)
+end)
+
+addCommandHandler("impost", function (_, username, nameVehicle) 
+  impostVehicleUsers(username, nameVehicle)
 end)
