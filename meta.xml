@@ -3,7 +3,7 @@
   
   <!-- Scripts -->
 
-  <script src="src/utils/utils.lua" type="client" cache="false" />
+  <script src="src/utils/utils.lua" type="shared" cache="false" />
   <script src="src/core/listener.lua" type="client" cache="false" />
   <script src="src/core/main.lua" type="client" cache="false" />
   
