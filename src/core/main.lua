@@ -23,6 +23,7 @@ function createAccountForUsers(username, password, age, email)
   end
 
   local account = existAccountUser(username)
+  
   if (account) then
     return outputChatBox("Este username já esta sendo usado por outra pessoa! Tente outro.")
   end
@@ -36,8 +37,6 @@ function createAccountForUsers(username, password, age, email)
   })
 
   outputChatBox("Parabéns " .. username .. " você foi cadastrado com sucesso no nosso banco de dados.")
-
-  return true
 end
 
 --@params:
@@ -50,25 +49,25 @@ function signInAccountUsers(username, password)
   end
 
   local account = existAccountUser(username)
+  
+  local user = users[account]
 
   if (not account) then
-    return outputChatBox("Esse username não está cadastrado no nosso banco de dados.")
+    outputChatBox("Esse username não está cadastrado no nosso banco de dados.")
+    return 
   end
 
-  local userPassword = users[account].password
-
-  if (password ~= userPassword) then
+  if (password ~= user.password) then
     return false
   end
 
-  if (logginAs == users[account].username) then
-    return outputChatBox("Você já está logado nessa conta!")
+  if (logginAs == user.username) then
+    outputChatBox("Você já está logado nessa conta!")
+    return
   end
 
-  logginAs = users[account].username
+  logginAs = user.username
   outputChatBox("Você foi logado com sucesso.")
-
-  return true
 end
 
 --@params:
@@ -90,7 +89,6 @@ local function deleteAccountUsers(username)
   return true
 end
 
---@params: none
 --@return: boolean
 function logoutAccountUsers()
   if (not logginAs) then
@@ -99,7 +97,6 @@ function logoutAccountUsers()
 
   deleteAccountUsers(logginAs)
   outputChatBox("Você foi deslogado da conta.")
-  return true
 end
 
 --@params:
@@ -111,16 +108,14 @@ function searchDatasUsers(username)
   end
 
   local account = existAccountUser(username)
+  
+  local user = users[account]
 
   if (not account) then
     return outputChatBox("Esse username não está cadastrado no nosso banco de dados.")
   end
-  
-  local age = users[account].age
-  local email = users[account].email
 
-  outputChatBox("Você buscou um dados de usuário chamado: ".. username .. " a idade dele e de: ".. age .. " e o email dele e: ".. email .. ".")
-  return true
+  outputChatBox("Você buscou um dados de usuário chamado: ".. user.username .. " a idade dele e de: ".. user.age .. " e o email dele e: ".. user.email .. ".")
 end
 
 --@params:
@@ -138,19 +133,18 @@ function buyVehicle(nameVehicle, color)
   
 
   local account = existAccountUser(logginAs)
-
-  if (not (users[account].age >= 18)) then 
+  local user = users[account]
+  
+  if (not (user.age >= 18)) then 
     return outputChatBox("Você precisa ter no minimo 18 anos para prosseguir com a compra!")
   end
 
-  table.insert(users[account].vehicles, {
+  table.insert(user.vehicles, {
     nameVehicle = nameVehicle,
     color = color,
   })
 
   outputChatBox("Compra finalizada com sucesso!")
-
-  return true
 end
 
 --@params:
@@ -163,18 +157,19 @@ function searchDatasVehicles(username)
 
   local account = existAccountUser(username)
 
+  local user = users[account]
+
   if (not account) then
     return outputChatBox("Esse username não está cadastrado no nosso banco de dados.")
   end
 
-  if (#users[account].vehicles < 1) then
+  if (#user.vehicles < 1) then
     return outputChatBox("Esse usuário não possui nenhum carro!")
   end
 
-  for i, v in ipairs(users[account].vehicles) do
+  for i, v in ipairs(user.vehicles) do
     outputChatBox("O usuário: ".. username .. " possui um(a) ".. v.nameVehicle .. " com a cor: " .. v.color .. ".")
   end
-  return true
 end
 
 --@params:
@@ -234,6 +229,4 @@ function impostVehicleUsers(username, nameVehicle)
 
   deleteVehicleUsers(username, existVehicle)
   outputChatBox("Você aplicou um imposto no veículo com sucesso!")
-
-  return true
 end
