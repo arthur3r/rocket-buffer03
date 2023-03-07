@@ -61,8 +61,8 @@ function signInAccountUsers(username, password)
     return false
   end
 
-  if (logginAs == user.username) then
-    outputChatBox("Você já está logado nessa conta!")
+  if (logginAs) then
+    outputChatBox("Você já está logado em uma conta!")
     return
   end
 
