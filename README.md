@@ -20,7 +20,6 @@ Um sistema simples de concessionária que o jogador consegue fazer a autenticaç
 - [x] - Criar uma função de cadastrar os usuários.
 - [x] - Criar uma função para verificar se existe o usuário registrado no array.
 - [x] - Criar uma função para logar os usuários cadastrados.
-- [x] - Criar uma função que retorna os dados do certo usuário.
 - [x] - Listar as informações do jogador.
 - [x] - Criar uma função de deslogar da conta.
 - [x] - Criar uma função para deletar a conta.
