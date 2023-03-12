@@ -16,10 +16,10 @@ Um sistema simples de concessionária que o jogador consegue fazer a autenticaç
 
 ### Authenticate Task list
 
-- [x] - Criar um array para inserir e guardar as informações do usuário cadastrado.
+- [x] - Criar um array para inserir e guardar as informações do usuário.
 - [x] - Criar uma função de cadastrar os usuários.
 - [x] - Criar uma função para verificar se existe o usuário registrado no array.
-- [x] - Criar uma função para logar os usuários cadastrados.
+- [x] - Criar uma função para logar os usuários.
 - [x] - Listar as informações do jogador.
 - [x] - Criar uma função de deslogar da conta.
 - [x] - Criar uma função para deletar a conta.
@@ -34,7 +34,7 @@ Um sistema simples de concessionária que o jogador consegue fazer a autenticaç
 ### Buy Vehicle Task list
 
 - [x] - O usuário tera que estar logado em alguma conta para prosseguir com a compra.
-- [x] - Não autorizar a compra caso a idade do jogador for menor que 18 anos.
+- [x] - Não autorizar a compra caso a idade do jogador for menor que 18.
 - [x] - Inserir dentro do array do usuário o veículo comprado.
 - [x] - Verificar se o usuário tem algum carro comprado.
 - [x] - Listar as informações do veículo comprado pelo jogador.
